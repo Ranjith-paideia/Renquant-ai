@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --radius-sm: .45rem;
+  --radius-md: .65rem;
+  --radius-lg: .8rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #0a1118;
+  --foreground: #eef4f7;
+  --card: #111b27;
+  --card-foreground: #eef4f7;
+  --muted: #1a2633;
+  --muted-foreground: #8795a7;
+  --primary: #d7ff64;
+  --primary-foreground: #0a1118;
+  --secondary: #1a2633;
+  --secondary-foreground: #d9e1e7;
+  --border: rgba(255,255,255,.09);
+  --input: rgba(255,255,255,.1);
+  --ring: #d7ff64;
+  --destructive: #ff6b72;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { @apply font-sans bg-background; }
+  body { @apply bg-background text-foreground antialiased; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+.nav-item { @apply flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-slate-500 transition-colors hover:bg-white/5 hover:text-slate-200; }
+.nav-active { @apply bg-[#d7ff64]/10 text-[#d7ff64] hover:bg-[#d7ff64]/15 hover:text-[#d7ff64]; box-shadow: inset 2px 0 #d7ff64; }
+.eyebrow { @apply text-[10px] font-semibold uppercase tracking-[.14em] text-slate-500; }
+.risk-card { background: radial-gradient(circle at 95% 0%, rgba(251,191,36,.11), transparent 35%), #111b27; }
+.chart-grid { background-image: linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size: 100% 25%, 12.5% 100%; }
+.workspace { @apply mx-auto max-w-[1500px] p-4 sm:p-7; }
+.data-table { @apply w-full border-collapse text-left text-xs; }
+.data-table th { @apply border-b border-white/8 px-4 py-3 text-[10px] font-semibold uppercase tracking-[.1em] text-slate-600; }
+.data-table td { @apply border-b border-white/6 px-4 py-3.5 text-slate-300; }
+.data-table tbody tr { @apply transition-colors hover:bg-white/[.025]; }
+.terminal-input { @apply w-full rounded-lg border border-white/10 bg-[#0a1118] px-3 py-2.5 text-sm text-slate-200 outline-none transition-shadow focus:border-[#d7ff64]/40 focus:ring-2 focus:ring-[#d7ff64]/10; }
+.control-tile { @apply flex gap-3 rounded-xl border border-white/7 bg-black/10 p-4 text-slate-400; }
+.control-tile > svg { @apply mt-0.5 size-4 shrink-0 text-[#d7ff64]; }
+.control-tile b { @apply block text-xs font-medium text-slate-200; }
+.control-tile span { @apply mt-1 block text-[11px] leading-5 text-slate-500; }
