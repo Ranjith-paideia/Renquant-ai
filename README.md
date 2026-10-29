@@ -1,4 +1,4 @@
-# Aegis Alpha
+# Renquant Alpha
 
 A secure, local-first research and paper-trading MVP for Indian retail users. It covers equities, crypto, forex, futures and options as research universes while keeping live execution absent and paper trading visibly enforced.
 
